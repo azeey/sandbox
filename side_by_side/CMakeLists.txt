@@ -12,12 +12,16 @@ target_link_libraries(test_transport
   pthread
 )
 
-find_package(sdformat8 REQUIRED COMPONENTS sdformat8)
 find_package(SDFormat 6 REQUIRED)
+set(sdformat6 ${SDFormat_LIBRARIES})
+unset(SDFormat_CONFIG_INCLUDED)
+
+find_package(sdformat8 REQUIRED)
+set(sdformat8 ${SDFormat_LIBRARIES})
 
 add_executable(test_sdformat test_sdformat.cc)
 
 target_link_libraries(test_sdformat
-  ${SDFormat_LIBRARIES}
-  sdformat8::sdformat8
+  ${sdformat6}
+  ${sdformat8}
 )
