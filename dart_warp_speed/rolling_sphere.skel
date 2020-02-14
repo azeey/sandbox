@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<skel version="1.0">
+  <world name="default">
+    <physics>
+      <!-- This can be 0.001, but it takes longer to demonstrate the issue. -->
+      <time_step>0.004</time_step>
+      <gravity>5 0 -9.81</gravity>
+      <!-- <gravity>4.69 0 -8.6</gravity> -->
+    </physics>
+    <skeleton name="ground">
+      <mobile>false</mobile>
+      <body name="ground_body">
+        <transformation>0 0 -1.2 0 0 0</transformation>
+        <visualization_shape>
+          <geometry>
+            <box>
+              <size>1000.0 10 0.2</size>
+            </box>
+          </geometry>
+        </visualization_shape>
+        <collision_shape>
+          <geometry>
+            <box>
+              <size>1000000.0 10 0.2</size>
+            </box>
+          </geometry>
+        </collision_shape>
+      </body>
+      <joint type="free" name="joint 1">
+        <parent>world</parent>
+        <child>ground_body</child>
+      </joint>
+    </skeleton>
+    <skeleton name="ball">
+      <body name="ball_body">
+        <inertia>
+          <mass>5</mass>
+          <moment_of_inertia>
+            <ixx>2</ixx>
+            <iyy>2</iyy>
+            <izz>2</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </moment_of_inertia>
+        </inertia>
+        <visualization_shape>
+          <geometry>
+            <sphere>
+              <radius>1</radius>
+            </sphere>
+          </geometry>
+          <color>1.0 0.0 0.0</color>
+        </visualization_shape>
+        <collision_shape>
+          <geometry>
+            <sphere>
+              <radius>1</radius>
+            </sphere>
+          </geometry>
+        </collision_shape>
+      </body>
+      <joint type="free" name="joint 2">
+        <parent>world</parent>
+        <child>ball_body</child>
+      </joint>
+    </skeleton>
+  </world>
+</skel>
