@@ -26,6 +26,7 @@ int main(int argc, char *argv[])
   SkeletonPtr sphere = createSphere();
 
   ShapeNodePtr shape1 = sphere->getBodyNode(0)->getShapeNode(0);
+  ShapeNodePtr shape2 = shape1;
 
   // Delete sphere first
   sphere.reset();
