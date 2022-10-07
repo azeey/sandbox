@@ -21,3 +21,5 @@ singleton.num in hello.so : 0
 singleton.num in hello.so after ++ : 1
 singleton.num in main : 100
 ```
+
+Example adapted from https://stackoverflow.com/questions/8623657/multiple-instances-of-singleton-across-shared-libraries-on-linux
