@@ -10,21 +10,20 @@ target_link_libraries(${PROJECT_NAME}
   )
 find_package(Protobuf REQUIRED)
 include_directories(${Protobuf_INCLUDE_DIRS})
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
-protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS double.proto)
-add_library(test-plugin-msgs SHARED ${PROTO_SRCS} ${PROTO_HDRS})
+add_subdirectory(msg1)
+add_subdirectory(msg2)
 
 add_library(test-plugin1 SHARED TestPlugin.cc)
 target_link_libraries(test-plugin1 PRIVATE
   gz-plugin2::register
   ${Protobuf_LIBRARIES}
-  test-plugin-msgs
+  test-plugin-msgs1
 )
 add_library(test-plugin2 SHARED TestPlugin.cc)
 target_link_libraries(test-plugin2 PRIVATE
   gz-plugin2::register
   ${Protobuf_LIBRARIES}
-  test-plugin-msgs
+  test-plugin-msgs2
 )
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
