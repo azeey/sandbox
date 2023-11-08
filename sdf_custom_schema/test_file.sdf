@@ -1,0 +1,6 @@
+<sdf version="1.10">
+  <model name="test_model">
+    <link name="base_link"/>
+  </model>
+</sdf>
+

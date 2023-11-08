@@ -1,0 +1,15 @@
+<element name="model" required="*">
+  <element name="test_param" type="bool" default="true" required="1">
+    <description>
+      Test parameter
+    </description>
+  </element>
+  <!-- This doesn't work as intended. It adds a new link description that is then ignored when loading an input .sdf file -->
+  <element name="link" required="*">
+    <element name="test_link_param" type="bool" default="true" required="1">
+      <description>
+        Test parameter
+      </description>
+    </element>
+  </element>
+</element>
