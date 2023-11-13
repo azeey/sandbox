@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<!-- Used to add dependency on project1 so that it's built first -->
+<package format="2">
+  <name>project2</name>
+  <version>1.0.0</version>
+  <description>Project2</description>
+
+  <maintainer email="none@example.com">maintainer</maintainer>
+
+  <license>Apache License 2.0</license>
+
+  <author email="none@example.com">Author</author>
+
+  <build_depend>project1</build_depend>
+
+</package>

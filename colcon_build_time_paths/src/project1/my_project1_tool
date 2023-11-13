@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Test if this script is found by find_program"
+echo $PATH
