@@ -49,7 +49,4 @@ int main(int argc, char *argv[])
   // }
   auto final_memory = allocated_memory_bytes.load();
   std::cout << static_cast<double>(final_memory - init_memory)/1e6 << "MB"<< std::endl;
-  while(1) {
-    std::this_thread::sleep_for(std::chrono::seconds(1));
-  }
 }
